@@ -2,8 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const Form = () => {
-  const [statesData, setStatesData] = useState([]);
-  const [occupationsData, setOccupationsData] = useState([]);
+  const [stateData, setStateData] = useState([]);
+  const [occupationData, setOccupationData] = useState([]);
 
   useEffect(() => {
     fetch("https://frontend-take-home.fetchrewards.com/form")
@@ -14,8 +14,8 @@ const Form = () => {
         return response.json();
       })
       .then((jsonData) => {
-        setStatesData(jsonData.states);
-        setOccupationsData(jsonData.occupations);
+        setStateData(jsonData.states);
+        setOccupationData(jsonData.occupations);
       })
       .catch((err) => {
         console.log(err);
@@ -110,7 +110,7 @@ const Form = () => {
             name="state"
           >
             <option value="">---</option>
-            {statesData.map((item) => (
+            {stateData.map((item) => (
               <option key={item.abbreviation} value={item.name}>
                 {item.name}
               </option>
@@ -129,7 +129,7 @@ const Form = () => {
             name="occupation"
           >
             <option value="">---</option>
-            {occupationsData.map((item) => (
+            {occupationData.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
