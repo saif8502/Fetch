@@ -206,16 +206,6 @@ body {
   font-size: 16px;
 }
 
-.form-label-states {
-  position: relative;
-  right: 36px;
-}
-
-.form-state-container {
-  position: relative;
-  left: 20px;
-}
-
 .form--submit {
   width: 320px;
   padding: 10px;
@@ -225,4 +215,18 @@ body {
   background-color: #639;
   border: none;
   cursor: pointer;
+}
+
+.form-state-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-occupation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
