@@ -118,7 +118,7 @@ const Form = () => {
           </select>
         </div>
 
-        <div>
+        <div className="form-occupation-container">
           <label htmlFor="occupation">Select your occupation</label>
 
           <select
