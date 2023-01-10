@@ -10,21 +10,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.flex {
-  display: flex;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.align-center {
-  align-content: center;
-}
-
-.m-23px-11px {
-  margin: 23px 11px;
-}
 
 /* Navbar */
 
@@ -164,11 +149,9 @@ body {
 }
 
 @media (max-width: 800px) {
-
-  .Home-container{
-    flex-direction: column;;
+  .Home-container {
+    flex-direction: column;
   }
-
 }
 
 /*Form container*/
