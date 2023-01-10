@@ -97,7 +97,7 @@ const Form = () => {
         />
 
         <div className="form-state-container">
-          <label htmlFor="state" className="">
+          <label htmlFor="state">
             Select your state
           </label>
 
