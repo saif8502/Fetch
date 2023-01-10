@@ -4,6 +4,13 @@ import { useState, useEffect } from "react";
 const Form = () => {
   const [stateData, setStateData] = useState([]);
   const [occupationData, setOccupationData] = useState([]);
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    occupation: "",
+    state: "",
+  });
 
   useEffect(() => {
     fetch("https://frontend-take-home.fetchrewards.com/form")
@@ -21,14 +28,6 @@ const Form = () => {
         console.log(err);
       });
   }, []);
-
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-    occupation: "",
-    state: "",
-  });
 
   function handleChange(event) {
     setUser((prevUser) => {
@@ -98,13 +97,13 @@ const Form = () => {
         />
 
         <div className="form-state-container">
-          <label htmlFor="state" className="form-label-states">
+          <label htmlFor="state" className="">
             Select your state
           </label>
 
           <select
             id="state"
-            className="form-select m-23px-11px"
+            className="form-select"
             value={user.state}
             onChange={handleChange}
             name="state"
@@ -123,7 +122,7 @@ const Form = () => {
 
           <select
             id="occupation"
-            className="form-select m-23px-11px"
+            className="form-select"
             value={user.occupation}
             onChange={handleChange}
             name="occupation"
@@ -142,5 +141,5 @@ const Form = () => {
       </form>
     </div>
   );
-}
+};
 export default Form;

@@ -10,21 +10,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.flex {
-  display: flex;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.align-center {
-  align-content: center;
-}
-
-.m-23px-11px {
-  margin: 23px 11px;
-}
 
 /* Navbar */
 
@@ -160,6 +145,13 @@ body {
 .Home-container h1 {
   font-size: 3rem;
   font-family: "Heebo", sans-serif;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .Home-container {
+    flex-direction: column;
+  }
 }
 
 /*Form container*/
