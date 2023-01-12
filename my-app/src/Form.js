@@ -42,10 +42,7 @@ const Form = () => {
     event.preventDefault();
 
     const { name, email, password, occupation, state } = user;
-    if (!name || !email || !password || !occupation || !state) {
-      alert("Please complete the entire form.");
-      return;
-    } else {
+    if (name || email || password || occupation || state) {
       alert("Thank you for submitting the form!");
     }
 
@@ -55,7 +52,6 @@ const Form = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify(user),
       }
@@ -70,6 +66,7 @@ const Form = () => {
         <input
           className="form--input"
           type="text"
+          required
           maxLength="30"
           placeholder="Full Name"
           onChange={handleChange}
@@ -80,6 +77,7 @@ const Form = () => {
         <input
           className="form--input"
           type="email"
+          required
           placeholder="E-mail address"
           onChange={handleChange}
           name="email"
@@ -89,6 +87,7 @@ const Form = () => {
         <input
           className="form--input"
           type="password"
+          required
           minLength="8"
           placeholder="Password"
           name="password"
@@ -103,6 +102,7 @@ const Form = () => {
 
           <select
             id="state"
+            required
             className="form-select"
             value={user.state}
             onChange={handleChange}
@@ -122,6 +122,7 @@ const Form = () => {
 
           <select
             id="occupation"
+            required
             className="form-select"
             value={user.occupation}
             onChange={handleChange}
